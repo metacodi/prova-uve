@@ -1,0 +1,3 @@
+
+- Incorporta signals (computades)
+- standalone

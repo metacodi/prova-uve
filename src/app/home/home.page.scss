@@ -1,0 +1,18 @@
+.header {
+  background: var(--ion-color-primary);
+}
+
+.left {
+  background: var(--ion-color-step-500);
+}
+
+.user {
+  // display: flex;
+  // flex-direction: column;
+  h3 {
+    font-weight: bold;
+  }
+  p:first-child {
+    font-style: italic;
+  }
+}

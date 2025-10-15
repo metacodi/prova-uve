@@ -1,0 +1,50 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CONTACTS
+    </ion-title>
+      <ion-searchbar></ion-searchbar>
+
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="header">
+      <ion-col size="auto">
+        CONTACTS
+      </ion-col>
+      <!-- <ion-col class="ion-display-sm">
+        <ion-searchbar></ion-searchbar>
+      </ion-col> -->
+    </ion-row>
+    <ion-row class="body">
+
+      <ion-col class="left ion-display-md ion-display-lg" style="max-width: 300px;">
+        <ion-searchbar #searchbar [(ngModel)]="match" name="match" debounce="500"></ion-searchbar>
+      </ion-col>
+      <ion-col>
+
+        <ion-grid>
+          <ion-row>
+              <ion-col *ngFor="let user of users | filter:match">
+                
+                <ion-item class="user">
+                  <ion-label>
+                    <h2>{{user.name}}</h2>
+                    <p style="font-style: italic;">{{user.username}}</p>
+                    <p style="color: var(--ion-color-primary)"><a href="mailto://{{user.email}}">{{user.email}}</a></p>
+                    <p style="color: var(--ion-color-primary)"><a href="tel://{{user.phone}}">{{user.phone}}</a></p>
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

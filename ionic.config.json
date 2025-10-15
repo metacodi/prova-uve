@@ -1,0 +1,7 @@
+{
+  "name": "uve-prova",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
