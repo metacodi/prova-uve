@@ -1,0 +1,126 @@
+
+ion-header, ion-content {
+  --color: #000;
+  --background: #fff;
+}
+
+ion-searchbar {
+  --color: #000;
+  --border-radius: 8px;
+  --box-shadow: none;
+  --background: #ffffff;
+  input {
+    padding-inline-start: 3rem;
+  }
+}
+
+ion-header ion-searchbar {
+  max-width: 300px; 
+  float: right;
+}
+
+ion-toolbar {
+  --background: #1F8BE6;
+  color: white;
+  ion-col {
+    align-content: center;
+  }
+  ion-title {
+    font-family: system-ui, var(--ion-font-family, inherit);
+    font-size: 28px;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+  ion-searchbar {
+    max-height: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  ion-header {
+    ion-searchbar {
+      display: none !important;
+    }
+  }
+}
+
+.content {
+  padding: 0px;
+  height: 100%;
+  ion-row {
+    height: 100%;
+  }
+}
+.content > ion-row > ion-col:first-child {
+  background: var(--ion-background-color-step-300);
+  background: #A8A7AA;
+}
+.content > ion-row > ion-col:last-child {
+  background: var(--ion-background-color-step-500);
+  background: #DBDBDB;
+}
+
+ion-spinner {
+  width: 100px;
+  height: 100px;
+  left: calc(50% - 100px);
+}
+
+@media (min-width: 1800px) {
+  .contacts {
+    ion-col {
+      flex: 0 0 calc(calc(3 / var(--ion-grid-columns, 12)) * 100%) !important;
+      width: calc(calc(3 / var(--ion-grid-columns, 12)) * 100%) !important;
+      max-width: calc(calc(3 / var(--ion-grid-columns, 12)) * 100%) !important;
+    }
+  }
+}
+
+.no-results, .error-message {
+  font-size: 18px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 16px;
+  background: var(--ion-background-color);
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.01), 0 3px 1px -2px rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.01);
+}
+
+.circle {
+  height: 60px;
+  width: 60px;
+  align-content: center;
+  text-align: center;
+  font-size: 28px;
+  margin-right: 12px;
+  border-radius: 32px;  
+  background-color: var(--ion-color-primary);
+  background-color: #1F8BE6;
+  color: #ffffff;
+}
+
+.contact > div:last-child {
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 1px;
+    font-size: 14px;
+  }
+  p:first-child {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  p:nth-child(2) {
+    font-style: italic;
+    color: #555;
+  }
+  a {
+    color: #1F8BE6;
+    text-decoration: none;
+  }
+}

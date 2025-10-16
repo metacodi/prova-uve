@@ -1,0 +1,66 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="auto">
+          <ion-title>Contacts</ion-title>
+        </ion-col>
+        <ion-col>
+          <ion-searchbar placeholder="Search..." (ionInput)="onSearchChange($event)" debounce="200"></ion-searchbar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="content">
+    <ion-row>
+      <ion-col size="6" size-md="3" size-lg="3" class="ion-display-none ion-display-md-block">
+
+        <ion-searchbar placeholder="Search..." (ionInput)="onSearchChange($event)" debounce="200"></ion-searchbar>
+        
+      </ion-col>
+      <ion-col>
+    
+        @if (isLoading()) {
+          <ion-spinner name="dots"></ion-spinner>
+    
+        } @else if (errorMessage()) {
+          <ion-text color="danger" class="error-message">{{errorMessage()}}</ion-text>
+    
+        } @else if (!filteredContacts().length) {
+          <ion-text class="empty-state">
+            No s'han trobat resultats
+          </ion-text>
+        
+        } @else {
+          <ion-grid class="contacts">
+            <ion-row>
+    
+            @for (contact of filteredContacts(); track contact.id) {
+              <ion-col size="12" size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
+                <div class="contact">
+                  <div>
+                    <div class="circle">{{ contact.initials }}</div>
+                  </div>
+                  <div>
+                    <p>{{ contact.name }}</p>
+                    <p class="username">{{ contact.username }}</p>
+                    <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+                    <p><a href="tel:{{ contact.phone }}">{{ contact.phone }}</a></p>
+                  </div>
+                </div>
+              </ion-col>
+            }
+    
+            </ion-row>
+          </ion-grid>
+        }
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
